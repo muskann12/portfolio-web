@@ -1,101 +1,73 @@
-import Image from "next/image";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import Typewriter from 'typewriter-effect';
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
+const HomePage = () => {
+  const router = useRouter();
+
+  const handleHireMeClick = () => {
+    router.push('/contact'); // Navigate to the contact page
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <main className="flex flex-col md:flex-row p-8">
+        {/* Left Section: Your Picture */}
+        <div className="flex-1 flex justify-center items-center mb-8 md:mb-0">
+          <Image
+            src="/images/girl.jpeg" // Update with your image path
+            alt="Your Name"
+            className="rounded-full" // Optional: makes the image circular
+            width={450} // Adjust size as needed
+            height={400} // Adjust size as needed
+          />
+        </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+        {/* Right Section: Description and Services */}
+        <div className="flex-1 md:ml-8">
+          <h1 className="mt-20 md:mt-0 text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-slate-100 to-neutral-400">
+            Hi! I'm Muskan Nisar
+          </h1>
+
+          {/* Typewriter Effect */}
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-300 mt-4">
+            <Typewriter
+              options={{
+                strings: ["A Passionate Front End Developer", "and Certified IT Support Specialist!"],
+                autoStart: true,
+                loop: true,
+              }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </h2>
+          <br />
+
+          <p className="text-gray-300 text-lg md:text-xl font-light">
+            “I’m driven by a passion for creating visually stunning and highly functional websites that provide seamless user experiences. With a strong focus on front-end development, I love transforming ideas into interactive, responsive designs. As a Certified IT Support Specialist, I bring expertise in automation and troubleshooting, ensuring that the technical backbone of every project runs smoothly. I’m always eager to take on new challenges and deliver top-tier solutions that exceed expectations.”
+          </p>
+
+          <h2 className="mt-8 text-2xl md:text-3xl font-mono text-gray-300">Services:</h2>
+          <ul className="mt-2 text-gray-300 list-disc list-inside text-lg md:text-xl font-medium">
+            <li>Create Responsive Websites</li>
+            <li>Design User-Friendly Interfaces</li>
+            <li>Build Front-end Web Solutions</li>
+            <li>Automate IT Support</li>
+            <li>I Blend Creativity with Technology</li>
+          </ul>
+          <br />
+
+          {/* Hire Me Button */}
+          <button
+            onClick={handleHireMeClick}
+            className="mt-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded hover:opacity-90 transition"
           >
-            Read our docs
-          </a>
+            Hire Me
+          </button>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
-}
+};
+
+export default HomePage;
