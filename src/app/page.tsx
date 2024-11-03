@@ -18,7 +18,7 @@ const HomePage = () => {
         <div className="flex-1 flex justify-center items-center mb-8 md:mb-0">
           <Image
             src="/images/girl.jpeg" // Update with your image path
-            alt="Your Name"
+            alt="Muskan Nisar"
             className="rounded-full" // Optional: makes the image circular
             width={450} // Adjust size as needed
             height={400} // Adjust size as needed
@@ -35,7 +35,11 @@ const HomePage = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-300 mt-4">
             <Typewriter
               options={{
-                strings: ["A Passionate Front End Developer", "and Certified IT Support Specialist!"],
+                strings: [
+                  "A Passionate Front End Developer", 
+                  "Certified IT Support Specialist", 
+                  "Certified UI/UX Designer"
+                ],
                 autoStart: true,
                 loop: true,
               }}
@@ -44,7 +48,7 @@ const HomePage = () => {
           <br />
 
           <p className="text-gray-300 text-lg md:text-xl font-light">
-            “I’m driven by a passion for creating visually stunning and highly functional websites that provide seamless user experiences. With a strong focus on front-end development, I love transforming ideas into interactive, responsive designs. As a Certified IT Support Specialist, I bring expertise in automation and troubleshooting, ensuring that the technical backbone of every project runs smoothly. I’m always eager to take on new challenges and deliver top-tier solutions that exceed expectations.”
+            “I’m driven by a passion for creating visually stunning and highly functional websites that provide seamless user experiences. With a strong focus on front-end development, I love transforming ideas into interactive, responsive designs. As a Certified IT Support Specialist and a Certified UI/UX Designer, I bring expertise in both technical troubleshooting and user-centered design, ensuring that each project is as functional as it is beautiful. I’m always eager to take on new challenges and deliver top-tier solutions that exceed expectations.”
           </p>
 
           <h2 className="mt-8 text-2xl md:text-3xl font-mono text-gray-300">Services:</h2>
@@ -53,7 +57,7 @@ const HomePage = () => {
             <li>Design User-Friendly Interfaces</li>
             <li>Build Front-end Web Solutions</li>
             <li>Automate IT Support</li>
-            <li>I Blend Creativity with Technology</li>
+            <li>Craft Engaging UI/UX Designs</li>
           </ul>
           <br />
 
